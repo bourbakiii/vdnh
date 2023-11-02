@@ -1,0 +1,149 @@
+@mixin font($fname, $fstyle, $fweight, $furl) {
+    @font-face {
+        font-family: $fname;
+        font-style: $fstyle;
+        font-weight: $fweight;
+        font-display: swap;
+        src: url("#{$furl}.ttf");
+    }
+}
+
+@include font("Neskid", normal, normal, "@/assets/fonts/11558");
+
+@include font("FuturaPT", normal, 300, "@/assets/fonts/futura/FuturaPT-Light");
+@include font("FuturaPT", normal, 400, "@/assets/fonts/futura/FuturaPT-Book");
+@include font("FuturaPT", normal, 500, "@/assets/fonts/futura/FuturaPT-Medium");
+@include font("FuturaPT", normal, 600, "@/assets/fonts/futura/FuturaPT-Demi");
+@include font("FuturaPT", normal, 700, "@/assets/fonts/futura/FuturaPT-Heavy");
+@include font("FuturaPT", normal, 800, "@/assets/fonts/futura/FuturaPT-BoldObl");
+@include font("FuturaPT", normal, 900, "@/assets/fonts/futura/FuturaPT-ExtraBold");
+
+@include font("Rumpelstiltskin", normal, 500, "@/assets/fonts/futura/Rumpelstiltskin");
+@include font("MyriadPro", normal, 500, "@/assets/fonts/futura/Myriad-Pro");
+@include font("OpenSans", normal, 500, "@/assets/fonts/futura/OpenSans");
+
+@include font("FuturaPTCond", normal, 500, "@/assets/fonts/futura/FuturaPT-Medium");
+@include font("FuturaPTCond", normal, 800, "@/assets/fonts/futura/FuturaPT-ExtraBold");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'FuturaPT', sans-serif;
+    font-weight: 500;
+    line-height: 120%;
+}
+
+html, body, #app {
+    height: 100%;
+    overflow: hidden;
+    max-width: 100vw;
+}
+
+.layout {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+.base-button {
+    box-sizing: content-box;
+    padding: calc(13 / 1920 * 100vw) calc(20 / 1920 * 100vw);
+
+    background: rgba(255, 255, 255, 0.8);
+    color: black !important;
+    border: 2px solid $button-base-color;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: .2s;
+    height: 2em;
+    word-break: break-word;
+    white-space: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'FuturaPT', sans-serif;
+    font-style: normal;
+    font-weight: 450;
+    font-size: calc(26 / 1920 /$text-scale-coefficient * 100vw);
+    line-height: 130%;
+
+
+    &.success {
+        color: white !important;
+        border-color: $success-color;
+        background-color: $success-color;
+    }
+
+    &.wrong {
+        color: white !important;
+        border-color: $wrong-color;
+        background-color: $wrong-color;
+    }
+
+    &:disabled {
+        cursor: default;
+    }
+
+    &:not(&:disabled):hover {
+        transform: scale(1.05);
+    }
+}
+
+.main-button {
+    padding: calc(20 / 1920 * 100vw) calc(30 / 1920 * 100vw);
+    font-family: 'FuturaPT', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: calc(40 / 1920 /$text-scale-coefficient* 100vw);
+    line-height: 135%;
+    text-align: center;
+    text-transform: uppercase;
+    border: 17px solid #FFEC00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000 !important;
+    background-color: white;
+    border-radius: 90px;
+    text-decoration: none !important;
+}
+
+.screen-button {
+    font-family: 'FuturaPT', sans-serif;
+    font-weight: 500;
+    font-size: calc(33 / 1920 * 100vw);
+    text-decoration: none !important;
+    height: calc(77/1080 * 100vh);
+    color: black !important;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    border-radius: 90px;
+    text-transform: uppercase;
+    transition: .25s;
+    &:hover{
+        opacity: 0.8;
+    }
+}
+
+
+.fslightboxfis{
+    display: flex;
+}
+.fslightbox-toolbar-button:nth-child(1){
+    display: none !important;
+}
+.fslightbox-toolbar-button:nth-child(2){
+    transform: translate(-50%, 50%)  scale(3) !important;
+}
+
+.maplist{
+    display: none !important;
+}
